@@ -1,0 +1,39 @@
+/* StackedSVGs.css */
+
+.svg-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* top: 10%;
+  left: -20%;
+  transform: rotate(300deg); */
+}
+
+.svg-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+}
+
+.svg-line:nth-child(1) {
+  width: 100px;
+  height: 103px;
+  top: 24px; /* Adjust the offset as needed */
+  left: 11px; /* Adjust the offset as needed */
+}
+
+.svg-line:nth-child(2) {
+  width: 100px;
+  height: 103px;
+  top: 24px; /* Adjust the offset as needed */
+  left: 11px; /* Adjust the offset as needed */
+}
+
+.svg-line:nth-child(3) {
+  width: 100px;
+  height: 54px;
+  top: 43px; /* Adjust the offset as needed */
+  left: 18px; /* Adjust the offset as needed */
+}
