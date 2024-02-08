@@ -1,0 +1,68 @@
+/* Mobile Styles (default) */
+.hero-card-container {
+  background-color: #fffaf5;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 120vh;
+  padding: 2rem;
+  z-index: -1;
+}
+
+.background-image {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  background: url("../../public/img/image7.svg") center/cover no-repeat;
+  z-index: -1;
+  background-size: contain;
+}
+
+.hero-card {
+  width: 90%; /* Adjusted for mobile */
+  height: auto; /* Adjusted for mobile */
+  margin-top: 2rem;
+  box-sizing: border-box;
+}
+
+/* Rest of the styles remain the same for mobile */
+
+/* Tablet Styles */
+@media only screen and (min-width: 768px) {
+  .hero-card {
+    width: 70%; /* Adjusted for tablet */
+  }
+
+  .hero-card h1 {
+    font-size: 2rem; /* Adjusted for tablet */
+  }
+
+  .hero-card h2,
+  .hero-card h2 span,
+  .hero-card p {
+    font-size: 1rem; /* Adjusted for tablet */
+  }
+}
+
+/* Large Screen Styles */
+@media only screen and (min-width: 1024px) {
+  .hero-card {
+    width: 50%; /* Adjusted for large screen */
+  }
+
+  .hero-card h1 {
+    font-size: 2.5rem; /* Adjusted for large screen */
+  }
+
+  .hero-card h2,
+  .hero-card h2 span,
+  .hero-card p {
+    font-size: 1.25rem; /* Adjusted for large screen */
+  }
+}
+
+/* Rest of the styles remain the same for tablet and large screen */

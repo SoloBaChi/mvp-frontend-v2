@@ -1,0 +1,248 @@
+.teen-wrapper {
+  position: relative;
+}
+
+.teenSection {
+  background-color: #fffaf5;
+  position: relative;
+}
+
+
+.teen-card {
+  background: #f5f3ff;
+  /* height: auto; */
+  box-shadow: 0px 0px 2.0625rem 0px rgba(217, 217, 217, 0.71);
+  padding: 1.2rem;
+  margin: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 4;
+  /* border: 1px solid red; */
+  display: block;
+}
+
+.teen-par {
+  color: #383838;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.teen-btn button {
+  padding: 0.9375rem 1.875rem;
+  background-color: #7d6dff;
+  color: #fff;
+  border: none;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1.25rem;
+  width: 50%;
+}
+
+.teen-btn button:hover {
+  background-color: #0d0927;
+}
+
+/* Input field styles */
+.teen-btn input[type="email"] {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.3125rem;
+  margin-top: 0.625rem;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.at-risk-teen-container {
+  height: 20rem;
+  overflow: hidden;
+}
+
+/* this is the image itself */
+.at-risk-teen {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  right: 1%;
+  bottom: 5%;
+  z-index: 2;
+}
+
+/* this is the colored backgorund */
+.slanted-bg {
+  position: absolute;
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.rotated-container {
+  /* position: relative; */
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 30%;
+  top: 10%;
+  /* bottom: -20%; */
+  /* background: rgba(125, 109, 255, 0.3); */
+  background: url("/assets/rectangle-bg.svg") no-repeat;
+  /* transform: rotate(30deg); */
+  z-index: 0;
+}
+
+.teen-body h1 {
+  color: var(--secondary-color, #383838);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 1.2rem;
+  z-index: 50;
+}
+
+.teen-body p {
+  padding: 1.2rem;
+  color: var(--secondary-color, #383838);
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.teen-body p span {
+  color: var(--purple, #7d6dff);
+}
+.teen-body.kid-body p span {
+  color: #ff8c00;
+}
+
+/*
+=============================================
+Media Query foe large screen size
+=============================================
+
+*/
+
+/* =================Tablet and above ===============*/
+@media (min-width: 710px) {
+  .rotated-container {
+    background: url("/assets/rectangle-bg.svg") no-repeat top
+      left/cover;
+    left: 0;
+    top: 0;
+  }
+}
+
+/* ===============for Desktop devices=========== */
+@media (min-width: 980px) {
+  .teenSection > *:first-child {
+    order: 2;
+  }
+  .teenSection > *:last-child {
+    order: 1;
+  }
+  .at-risk-teen-container {
+    height: auto;
+  }
+  .at-risk-teen-container {
+    position: absolute;
+    width: 35rem;
+    height: 35rem;
+    bottom: 50px;
+    right: 0;
+    bottom: 10%;
+    overflow: hidden;
+  }
+}
+
+/* 
+@media (min-width: 980px) {
+
+  .teenSection {
+    margin-top: 3rem;
+    background: rgba(254, 240, 222, 0.8);
+  }
+  .teen-card {
+    background: #f5f3ff;
+    box-shadow: 0px 0px 2.0625rem 0px rgba(217, 217, 217, 0.71);
+    padding-left: 1.5rem;
+    margin: 1.25rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .at-risk-teen-container {
+    position: absolute;
+    width: 35rem;
+    height: 35rem;
+    bottom: 50px;
+    right: 0;
+    bottom: 10%;
+    overflow: hidden;
+  }
+
+  .slanted-bg {
+    position: absolute;
+    top: 0;
+    right: -20%;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .rotated-container {
+    position: absolute;
+    height: 100%;
+    right: -90%;
+    bottom: -10%;
+    left: 0;
+    background: rgba(125, 109, 255, 0.3);
+    transform: rotate(135deg);
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .at-risk-teen {
+    position: absolute;
+    width: 65%;
+    height: 65%;
+    right: -1%;
+    bottom: 5%;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .teen-body p {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .teen-body p span {
+    color: #7d6dff;
+  }
+  .teen-par {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.8;
+  }
+  .teen-btn .large-screen-button {
+    align-self: center;
+    width: 50%;
+    padding: 14px 66px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 1200px) {
+} */
