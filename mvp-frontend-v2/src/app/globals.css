@@ -75,7 +75,7 @@ Media Query foe large screen size
   .kid-card,
   .teen-card {
     padding: 2.5rem 3.5rem !important;
-    min-height: 650px;
+    /* min-height: 650px; */
   }
 }
 
