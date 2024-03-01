@@ -2,9 +2,10 @@ import Card from "./shared/CardComponent";
 import "../styles/MainContents.css";
 import ArrowDown from "./svgs/ArrowDown";
 import SmallImage from "./shared/SmallImage";
-import ellipseContainer from "./svgs/EllipseLines";
+import EllipseLines from "./svgs/EllipseLines";
 
 function MainContents(props) {
+  const Lines = EllipseLines();
   return (
     <>
       <div className="hero-card-container">
@@ -21,7 +22,7 @@ function MainContents(props) {
             <div className="card-contents">
               <h1>Mussia</h1>
               <h2>
-                Parenting in Your <span>Teen's</span> Native Language
+                Parenting in Your <span>Teens</span> Native Language
               </h2>
               <p>
                 Charged is the first digital parenting tool in history that
@@ -35,25 +36,25 @@ function MainContents(props) {
               <button>Join The Waitlist</button>
             </div>
 
-            <ellipseContainer.TopLeft
+            <Lines.TopLeft
               className="ellipse-wrapper"
               top={250}
               left={-17}
               // rotate={0}
             />
-            <ellipseContainer.TopRight
+            <Lines.TopRight
               className="ellipse-wrapper"
               top={0}
               right={0}
               // rotate={0}
             />
-            <ellipseContainer.BottomRight
+            <Lines.BottomRight
               className="ellipse-wrapper"
               bottom={0}
               right={0}
               // rotate={0}
             />
-            <ellipseContainer.BottomLeft
+            <Lines.BottomLeft
               className="ellipse-wrapper"
               top={-25}
               left={-25}

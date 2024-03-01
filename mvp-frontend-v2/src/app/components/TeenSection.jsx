@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import "../styles/TeenSection.css";
 import CardComponent from "./shared/CardComponent";
 import StackedSVGs from "./svgs/StackedSVGs";
-import ellipseContainer from "./svgs/EllipseLines";
 import { InfinitySpin } from "react-loader-spinner";
+import EllipseLines from "./svgs/EllipseLines";
 
 function TeenSection() {
   const [showEmailInput, setShowEmailInput] = useState(false);
@@ -50,6 +50,7 @@ function TeenSection() {
   const handleWaitlistClick = () => {
     setShowEmailInput(!showEmailInput);
   };
+  const Line = EllipseLines();
   return (
     <div className="teen-wrapper">
       <div className="teenSection flex-container">
@@ -115,25 +116,25 @@ function TeenSection() {
                 )}
               </div>
             </div>
-            <ellipseContainer.TopLeft
+            <Line.TopLeft
               className="ellipse-wrapper"
               top={-135}
               left={-15}
               // rotate={0}
             />
-            <ellipseContainer.TopRight
+            <Line.TopRight
               className="ellipse-wrapper"
               top={-20}
               right={-10}
               // rotate={0}
             />
-            <ellipseContainer.BottomRight
+            <Line.BottomRight
               className="ellipse-wrapper"
               bottom={0}
               right={0}
               // rotate={0}
             />
-            <ellipseContainer.BottomLeft
+            <Line.BottomLeft
               className="ellipse-wrapper"
               bottom={-40}
               left={-75}
@@ -167,6 +168,7 @@ function TeenSection() {
           <div className="rotated-container"></div>
         </div>
       </div>
+      {/* {console.log(EllipseLines().TopLeft)} */}
     </div>
   );
 }

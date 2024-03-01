@@ -1,9 +1,9 @@
 import React from "react";
 import "../../styles/EllipseLines.css";
 
-const ellipseContainer = {};
+const EllipseContainer = {};
 
-ellipseContainer.TopLeft = ({
+EllipseContainer.TopLeft = ({
   className,
   top,
   right,
@@ -43,7 +43,7 @@ ellipseContainer.TopLeft = ({
   );
 };
 
-ellipseContainer.TopRight = ({
+EllipseContainer.TopRight = ({
   className,
   top,
   left,
@@ -84,7 +84,7 @@ ellipseContainer.TopRight = ({
 };
 
 // bottom icons
-ellipseContainer.BottomRight = ({
+EllipseContainer.BottomRight = ({
   className,
   bottom,
   right,
@@ -124,7 +124,7 @@ ellipseContainer.BottomRight = ({
   );
 };
 
-ellipseContainer.BottomLeft = ({
+EllipseContainer.BottomLeft = ({
   className,
   top,
   left,
@@ -164,4 +164,10 @@ ellipseContainer.BottomLeft = ({
   );
 };
 
-export default ellipseContainer;
+function EllipseLines() {
+  return EllipseContainer;
+}
+
+export default EllipseLines;
+
+// export default ellipseContainer;
