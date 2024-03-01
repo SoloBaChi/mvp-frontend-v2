@@ -1,17 +1,56 @@
-"use client"
-import React,{useState} from "react";
+"use client";
+import React, { useState } from "react";
 import "../styles/TeenSection.css";
-import Card from "./shared/Card";
+import CardComponent from "./shared/CardComponent";
 import StackedSVGs from "./svgs/StackedSVGs";
-import ellipseContainer from "./svgs/EllipseLines";
-
+import { InfinitySpin } from "react-loader-spinner";
+import EllipseLines from "./svgs/EllipseLines";
 
 function TeenSection() {
   const [showEmailInput, setShowEmailInput] = useState(false);
+  const [emailValue, setEmailValue] = useState({
+    email: "",
+  });
+  const [statusMsg, setStatusMsg] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleEmailMessage = (msgObj) => {
+    return msgObj;
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = emailValue;
+    setLoading(true);
+    try {
+      const res = await fetch(`https://mussia.onrender.com/api/v1/send-email`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const resObj = await res.json();
+      console.log(resObj);
+      setStatusMsg(handleEmailMessage(resObj));
+      // console.log(resObj);
+      setEmailValue((prev) => {
+        return {
+          ...prev,
+          resObj,
+        };
+      });
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleWaitlistClick = () => {
     setShowEmailInput(!showEmailInput);
   };
+  const Line = EllipseLines();
   return (
     <div className="teen-wrapper">
       <div className="teenSection flex-container">
@@ -22,7 +61,7 @@ function TeenSection() {
           </p>
         </div>
         <div className="flex-item">
-          <Card className="teen-card">
+          <CardComponent className="teen-card">
             <p className="teen-par">
               Charged for Teens revolutionizes how parents guide their teenagers
               through life&#39;s challenges.
@@ -38,30 +77,64 @@ function TeenSection() {
             </p>
 
             <div className="teen-btn">
-              <input type="email" placeholder="Enter your email" />
-              <button className="large-screen-button">
-                Join the wait list
-              </button>
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={emailValue.value}
+                  onChange={(e) =>
+                    setEmailValue((prev) => {
+                      return {
+                        ...prev,
+                        [e.target.name]: e.target.value,
+                      };
+                    })
+                  }
+                  name="email"
+                  required
+                />
+                <button className="large-screen-button">
+                  {loading ? (
+                    <span className="btn-spin">
+                      <InfinitySpin
+                        visible={true}
+                        color="#fff"
+                        ariaLabel="infinity-spin-loading"
+                        width="70"
+                      />
+                    </span>
+                  ) : (
+                    <span>Join the wait list render</span>
+                  )}
+                </button>
+              </form>
+              <div>
+                {statusMsg.status == "success" ? (
+                  <span style={{ color: "green" }}>{statusMsg.message}</span>
+                ) : (
+                  <span style={{ color: "red" }}>{statusMsg.message}</span>
+                )}
+              </div>
             </div>
-            <ellipseContainer.TopLeft
+            <Line.TopLeft
               className="ellipse-wrapper"
               top={-135}
               left={-15}
               // rotate={0}
             />
-            <ellipseContainer.TopRight
+            <Line.TopRight
               className="ellipse-wrapper"
               top={-20}
               right={-10}
               // rotate={0}
             />
-            <ellipseContainer.BottomRight
+            <Line.BottomRight
               className="ellipse-wrapper"
               bottom={0}
               right={0}
               // rotate={0}
             />
-            <ellipseContainer.BottomLeft
+            <Line.BottomLeft
               className="ellipse-wrapper"
               bottom={-40}
               left={-75}
@@ -82,7 +155,7 @@ function TeenSection() {
           /> */}
 
             {/* <StackedSVGs className="svg3" top="80%" left="5%" rotate="60deg" /> */}
-          </Card>
+          </CardComponent>
         </div>
       </div>
       <div className="at-risk-teen-container">
@@ -95,6 +168,7 @@ function TeenSection() {
           <div className="rotated-container"></div>
         </div>
       </div>
+      {/* {console.log(EllipseLines().TopLeft)} */}
     </div>
   );
 }

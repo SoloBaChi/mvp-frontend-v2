@@ -1,5 +1,5 @@
 import "../styles/Blog.css";
-import Card from "./shared/Card";
+import Card from "./shared/CardComponent";
 import ShareIcon from "./ShareIcon";
 
 export default function BlogPost(props) {

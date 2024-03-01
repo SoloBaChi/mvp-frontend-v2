@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./shared/Card";
+import Card from "./shared/CardComponent";
 import "../styles/KidSection.css";
 import StackedSVGs from "./svgs/StackedSVGs";
 import ellipseContainer from "./svgs/EllipseLines";

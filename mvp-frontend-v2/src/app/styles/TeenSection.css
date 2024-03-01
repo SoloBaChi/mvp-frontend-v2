@@ -7,17 +7,14 @@
   position: relative;
 }
 
-
-.teen-card {
-  background: #f5f3ff;
-  /* height: auto; */
-  box-shadow: 0px 0px 2.0625rem 0px rgba(217, 217, 217, 0.71);
+.card.teen-card {
+  background: rgba(245, 243, 255, 1);
+  box-shadow: 0px 0px 33px 0px rgba(217, 217, 217, 0.71);
   padding: 1.2rem;
   margin: 1.25rem;
   position: relative;
   overflow: hidden;
   z-index: 4;
-  /* border: 1px solid red; */
   display: block;
 }
 
@@ -30,7 +27,7 @@
 }
 
 .teen-btn button {
-  padding: 0.9375rem 1.875rem;
+  padding: 0.75rem;
   background-color: #7d6dff;
   color: #fff;
   border: none;
@@ -38,7 +35,13 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 1.25rem;
-  width: 50%;
+  display: block;
+  text-align: center;
+}
+.teen-btn .btn-spin {
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 .teen-btn button:hover {
@@ -133,8 +136,7 @@ Media Query foe large screen size
 /* =================Tablet and above ===============*/
 @media (min-width: 710px) {
   .rotated-container {
-    background: url("/assets/rectangle-bg.svg") no-repeat top
-      left/cover;
+    background: url("/assets/rectangle-bg.svg") no-repeat top left/cover;
     left: 0;
     top: 0;
   }
@@ -147,14 +149,15 @@ Media Query foe large screen size
   }
   .teenSection > *:last-child {
     order: 1;
+    height: auto;
   }
   .at-risk-teen-container {
-    height: auto;
+    /* height: auto; */
   }
   .at-risk-teen-container {
     position: absolute;
     width: 35rem;
-    height: 35rem;
+    height: 45rem;
     bottom: 50px;
     right: 0;
     bottom: 10%;
