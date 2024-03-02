@@ -1,8 +1,8 @@
-import Card from "./shared/CardComponent";
 import "../styles/MainContents.css";
 import ArrowDown from "./svgs/ArrowDown";
-import SmallImage from "./shared/SmallImage";
+// import SmallImage from "./shared/SmallImage";
 import EllipseLines from "./svgs/EllipseLines";
+import CardComponent from "./shared/CardComponent";
 
 function MainContents(props) {
   const Lines = EllipseLines();
@@ -18,7 +18,7 @@ function MainContents(props) {
             <SmallImage src="/img/TeenBoy1.png" alt="Teen Boy 1" />
           </div>
 
-          <Card className="hero-card">
+          <CardComponent className="hero-card">
             <div className="card-contents">
               <h1>Mussia</h1>
               <h2>
@@ -59,7 +59,7 @@ function MainContents(props) {
               top={-25}
               left={-25}
             />
-          </Card>
+          </CardComponent>
         </div>
       </div>
       <div className="hero-arrow">
