@@ -328,6 +328,7 @@ function EllipseLines() {
 
   return EllipseContainer;
 }
+EllipseLines.displayName = "EllipseLines";
 
 export default EllipseLines;
 
