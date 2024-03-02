@@ -12,10 +12,10 @@ function MainContents(props) {
         {/* <div className="background-image"></div> */}
         <div className="hero-card-contents">
           <div className="rounded-images">
-            <SmallImage src="/img/Parent1.png" alt="Parent 1" />
+            {/* <SmallImage src="/img/Parent1.png" alt="Parent 1" />
             <SmallImage src="/img/PBanner.png" alt="Parent 2" />
             <SmallImage src="/img/TeenGirl.png" alt="Teen Girl 1" />
-            <SmallImage src="/img/TeenBoy1.png" alt="Teen Boy 1" />
+            <SmallImage src="/img/TeenBoy1.png" alt="Teen Boy 1" /> */}
           </div>
 
           <CardComponent className="hero-card">
